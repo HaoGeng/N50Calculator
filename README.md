@@ -7,6 +7,27 @@ Run `javac N50Calculator.java && java N50Calculator -f <FILEPATH>` to execute th
 
 Usage:
 ```
+$ javac N50Calculator.java && java N50Calculator
+Usage: java N50Calculator [-h] -f FILEPATH
+
+Required arguments:
+-f, --filepath : path to the Fasta File
+Optional arguments:
+-h, --help : show this help message and exit
+```
+```
+$ javac N50Calculator.java && java N50Calculator -f 123
+
+********** File not found! *************
+
+Usage: java N50Calculator [-h] -f FILEPATH
+
+Required arguments:
+-f, --filepath : path to the Fasta File
+Optional arguments:
+-h, --help : show this help message and exit
+```
+```
 $ javac N50Calculator.java && java N50Calculator -f input.fna
 3654
 ```
