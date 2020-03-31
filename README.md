@@ -16,7 +16,7 @@ Required arguments:
 Optional arguments:
 -h, --help : show this help message and exit
 ```
-File doesn't exist
+File doesn't exist:
 ```
 $ javac N50Calculator.java && java N50Calculator -f 123
 
