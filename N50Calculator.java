@@ -9,35 +9,38 @@ public class N50Calculator {
     public static ArrayList<Integer> contigLengths;
 
     public static void main (String[] args) {
-        File fasta = getFastaFile();
+        File fasta = getFastaFileByArgs(args);
 
         setContigLengths(fasta);
 
         printN50();
     }
 
-    // get FASTA filename from user input
-    public static File getFastaFile () {
-        Scanner inputScanner = new Scanner(System.in);
+    public static File getFastaFileByArgs(String[] args) {
+
         File fasta = null;
-        String filename = null;
+        if (args.length == 2 && (args[0].equals("-f") || args[0].equals("--filepath"))) {
+            fasta = new File(args[1]);
 
-        // request valid FASTA file until user input a correct one
-        do {
-            if (filename != null) {
-                System.out.println("File doesn't exist, please enter again: ");
+            if (!fasta.exists()) {
+                System.out.println("\n********** File not found! *************\n");
+                exitAndPrintHelp();
             }
-            else {
-                System.out.println("Please enter a valid FASTA file name exists within project root: ");
-            }
-
-            filename = inputScanner.next();
-            fasta = new File(filename);
-        } while (!fasta.exists()); // reprompt if file doesn't exist
-
-        inputScanner.close();
+        } else {
+            exitAndPrintHelp();
+        }
 
         return fasta;
+    }
+
+    public static void exitAndPrintHelp() {
+        System.out.println("Usage: java N50Calculator [-h] -f FILEPATH\n");
+        System.out.println("Required arguments:");
+        System.out.println("-f, --filepath : path to the Fasta File");
+        System.out.println("Optional arguments:");
+        System.out.println("-h, --help : show this help message and exit");
+
+        System.exit(0);
     }
 
     // read the Fasta file provided, line by line
