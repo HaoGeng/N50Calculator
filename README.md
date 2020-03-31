@@ -6,6 +6,7 @@ Requirement: Java 8.
 Run `javac N50Calculator.java && java N50Calculator -f <FILEPATH>` to execute the program.
 
 Usage:
+No arg:
 ```
 $ javac N50Calculator.java && java N50Calculator
 Usage: java N50Calculator [-h] -f FILEPATH
@@ -15,6 +16,7 @@ Required arguments:
 Optional arguments:
 -h, --help : show this help message and exit
 ```
+File doesn't exist
 ```
 $ javac N50Calculator.java && java N50Calculator -f 123
 
@@ -27,6 +29,7 @@ Required arguments:
 Optional arguments:
 -h, --help : show this help message and exit
 ```
+Process existing file:
 ```
 $ javac N50Calculator.java && java N50Calculator -f input.fna
 3654
