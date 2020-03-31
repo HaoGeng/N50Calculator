@@ -2,6 +2,7 @@
 ###### Exercise One - Cmd Line Tool
 
 Please place the FASTA file within project root.
+
 Run `javac N50Calculator.java && java N50Calculator` to execute the program.
 
 Usage:
